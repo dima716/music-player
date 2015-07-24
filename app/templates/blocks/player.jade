@@ -1,0 +1,63 @@
+div(class="player")
+	div(class="player__inner")
+		div(class="player__cover")
+		div(class="player__playlist playlist playlist_empty")
+			div(class="playlist__header")
+				label(class="playlist__label" for="playlist-search") Поиск
+				input(class="playlist__input" type="search" id="playlist-search")
+			ul(class="playlist__content")
+			div(class="playlist__note") Перенесите песни сюда
+	div(class="waveform")
+	div(class="player__bar")
+		div(class="player__controls controls")
+			div(class="controls__item controls__item_type_previous")
+				i(class="controls__icon controls__icon_type_backward2")
+			div(class="controls__item controls__item_type_play3")
+				i(class="controls__icon controls__icon_type_play3")
+			div(class="controls__item controls__item_type_next")
+				i(class="controls__icon controls__icon_type_forward3")
+			div(class="controls__item controls__item_type_volume")
+				i(class="controls__icon controls__icon_type_volume-mute")
+				input(type="range", min="0", max="100")
+				span 50
+			div(class="controls__item controls__item_type_eq")
+				i(class="controls__icon controls__icon_type_equalizer2")
+			div(class="controls__item controls__item_type_shuffle")
+				i(class="controls__icon controls__icon_type_shuffle")
+			div(class="controls__item controls__item_type_repeat")
+				i(class="controls__icon controls__icon_type_loop2")
+		div(class="player__time time")
+			span(class="time__item time__item_type_current") -
+			span(class="time__item time__item_type_separator") /
+			span(class="time__item time__item_type_total") -
+		div(class="eq")
+			div(class="eq__list")
+				div(class="eq__item")
+					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+				div(class="eq__item")
+					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+				div(class="eq__item")
+					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+				div(class="eq__item")
+					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+				div(class="eq__item")
+					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+				div(class="eq__item")
+					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+				div(class="eq__item")
+					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+				div(class="eq__item")
+					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+				div(class="eq__item")
+					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+				div(class="eq__item")
+					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+
+			ul(class="eq__presets presets")
+				li(class="presets__item presets__item_type_pop") pop
+				li(class="presets__item presets__item_type_rock") rock
+				li(class="presets__item presets__item_type_jazz") jazz
+				li(class="presets__item presets__item_type_classic") classic
+				li(class="presets__item presets__item_type_normal presets__item_state_active") normal
+
+

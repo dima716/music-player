@@ -1,0 +1,59 @@
+.controls
+	display flex
+	justify-content space-around
+	align-content center
+
+	&__item
+		cursor pointer
+		padding 15px 0
+
+		&:hover .controls__icon:before,
+		&_state_active .controls__icon:before
+			color #3cd2ce
+
+		&_type_volume > span
+			vertical-align 2px
+			margin-left 10px
+
+		&_type_volume > input
+			cursor pointer
+
+	&__icon
+		font-family 'icomoon'
+		speak none
+		font-style normal
+		font-weight normal
+		font-variant normal
+		text-transform none
+		line-height 1
+		font-size 20px
+		color #666
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing antialiased
+		-moz-osx-font-smoothing grayscale
+
+		&_type_equalizer2:before
+			content "\e993"
+
+		&_type_play3:before
+			content "\ea1c"
+
+		&_type_pause2:before
+			content "\ea1d"
+
+		&_type_backward2:before
+			content "\ea1f"
+
+		&_type_forward3:before
+			content "\ea20"
+
+		&_type_volume-mute:before
+			content "\ea29"
+
+		&_type_loop2:before
+			content "\ea2e"
+
+		&_type_shuffle:before
+			content "\ea30"
+

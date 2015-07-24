@@ -1,0 +1,32 @@
+.eq
+	position absolute
+	bottom 45px
+	left 30%
+	background-color #fff
+	box-shadow 0 2px 4px rgba(0,0,0,.1)
+	border solid 1px #ccc
+	background-image linear-gradient(to bottom, #efefef, #f7f7f7)
+	padding 5px
+	opacity 0
+	transition .1s opacity linear
+
+	&_state_active
+		opacity 1
+
+	&__list
+		display inline-block
+		vertical-align middle
+
+	&__presets
+		display inline-block
+		vertical-align middle
+		margin-left 10px
+
+	&__item
+		display inline-block
+
+	&__input
+		-webkit-appearance slider-vertical
+		width 15px
+		height 150px
+
