@@ -8,7 +8,7 @@ div(class="player")
 				input(class="playlist__input" type="search" id="playlist-search")
 			ul(class="playlist__content")
 			div(class="playlist__note") Перенесите песни сюда
-	div(class="waveform")
+	div(id="wave", class="waveform")
 	div(class="player__bar")
 		div(class="player__controls controls")
 			div(class="controls__item controls__item_type_previous")
@@ -61,4 +61,17 @@ div(class="player")
 				li(class="presets__item presets__item_type_classic") classic
 				li(class="presets__item presets__item_type_normal presets__item_state_active") normal
 div(class="dropzone") Добавить файлы
+// Шаблон
+script(id="playlist-item" type="text/x-handlebars-template").
+	<li class="playlist__item track", data-id="{{id}}">
+		<div class="track__cover-wrap">
+			<img class="track__cover" src="{{cover}}">
+		</div>
+		<div class="track__info">
+			<span class="track__title">{{title}}</span>
+			<span class="track__artist">{{artist}}</span>
+		</div>
+		<div class="track__btn track__btn_type_remove">&times;</div>
+	</li>
+// Шаблон
 

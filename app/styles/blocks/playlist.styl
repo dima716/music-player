@@ -12,9 +12,10 @@
 		border-bottom 1px solid #ccc
 
 	&__item
-		display: flex
+		display flex
+		position relative
 		padding 10px
-		align-items: center
+		align-items center
 		border-bottom 1px solid #ccc
 		cursor pointer
 
@@ -37,6 +38,7 @@
 		box-shadow 0 0 1px 0 rgba(0,0,0,.2)
 
 	&__note
+		display none
 		position absolute
 		left 50%
 		top 50%
@@ -46,4 +48,6 @@
 	&_empty
 		.playlist__header
 			display none
+		.playlist__note
+			display block
 
