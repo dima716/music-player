@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="imagetoolbar" content="no">
+		<meta name="msthemecompatible" content="no">
+		<meta name="cleartype" content="on">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="application-name" content="CSSSR Project Template">
+		<meta name="msapplication-tooltip" content="A template for a quick start.">
+		<title>Музыкальный плеер</title>
+		<meta name="description">
+		<meta name="keywords">
+		<meta name="copyright">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/assets/styles/common.css?1438349986423" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="player">
+			<div class="player__inner">
+				<div class="player__cover-wrap">
+					<img src="assets/images/default.png" alt="Music" class="player__cover">
+				</div>
+				<div class="player__playlist playlist playlist_empty">
+					<ul class="playlist__content"></ul>
+					<div class="playlist__note">Перенесите песни сюда</div>
+				</div>
+			</div>
+			<div id="wave" class="player__waveform waveform">
+				<img src="assets/images/loader.svg" class="waveform__loader">
+			</div>
+			<div class="player__bar">
+				<div class="player__controls controls">
+					<div class="controls__item controls__item_type_previous"><i class="controls__icon controls__icon_type_backward2"></i>
+					</div>
+					<div class="controls__item controls__item_type_play-pause"><i class="controls__icon controls__icon_type_play3"></i>
+					</div>
+					<div class="controls__item controls__item_type_next"><i class="controls__icon controls__icon_type_forward3"></i>
+					</div>
+					<div class="controls__item controls__item_type_volume"><i class="controls__icon controls__icon_type_volume-mute"></i>
+						<input type="range" min="0" max="100" value="100"><span></span>
+					</div>
+					<div class="controls__item controls__item_type_equalizer"><i class="controls__icon controls__icon_type_equalizer2"></i>
+					</div>
+					<div class="controls__item controls__item_type_shuffle"><i class="controls__icon controls__icon_type_shuffle"></i>
+					</div>
+					<div class="controls__item controls__item_type_loop"><i class="controls__icon controls__icon_type_loop2"></i>
+					</div>
+				</div>
+				<div class="player__track track track_size_small">
+					<div class="track__title"></div>
+					<div class="track__artist"></div>
+				</div>
+				<div class="player__time time"><span class="time__item time__item_type_current">-</span><span class="time__item time__item_type_separator">/</span><span class="time__item time__item_type_total">-</span>
+				</div>
+				<div class="equalizer">
+					<div class="equalizer__list">
+						<div data-frequency="32 Гц" class="equalizer__item">
+							<input type="range" min="-12" max="12" orient="vertical" class="equalizer__input">
+						</div>
+						<div data-frequency="64 Гц" class="equalizer__item">
+							<input type="range" min="-12" max="12" orient="vertical" class="equalizer__input">
+						</div>
+						<div data-frequency="125 Гц" class="equalizer__item">
+							<input type="range" min="-12" max="12" orient="vertical" class="equalizer__input">
+						</div>
+						<div data-frequency="250 Гц" class="equalizer__item">
+							<input type="range" min="-12" max="12" orient="vertical" class="equalizer__input">
+						</div>
+						<div data-frequency="500 Гц" class="equalizer__item">
+							<input type="range" min="-12" max="12" orient="vertical" class="equalizer__input">
+						</div>
+						<div data-frequency="1 кГц" class="equalizer__item">
+							<input type="range" min="-12" max="12" orient="vertical" class="equalizer__input">
+						</div>
+						<div data-frequency="2 кГц" class="equalizer__item">
+							<input type="range" min="-12" max="12" orient="vertical" class="equalizer__input">
+						</div>
+						<div data-frequency="4 кГц" class="equalizer__item">
+							<input type="range" min="-12" max="12" orient="vertical" class="equalizer__input">
+						</div>
+						<div data-frequency="8 кГц" class="equalizer__item">
+							<input type="range" min="-12" max="12" orient="vertical" class="equalizer__input">
+						</div>
+						<div data-frequency="16 кГц" class="equalizer__item">
+							<input type="range" min="-12" max="12" orient="vertical" class="equalizer__input">
+						</div>
+					</div>
+					<ul class="equalizer__presets presets">
+						<li data-preset="pop" class="presets__item presets__item_type_pop">pop</li>
+						<li data-preset="rock" class="presets__item presets__item_type_rock">rock</li>
+						<li data-preset="jazz" class="presets__item presets__item_type_jazz">jazz</li>
+						<li data-preset="classic" class="presets__item presets__item_type_classic">classic</li>
+						<li data-preset="normal" class="presets__item presets__item_type_normal presets__item_state_active">normal</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="dropzone">Добавить файлы</div>
+		<!-- Шаблон-->
+		<script id="playlist-item" type="text/x-handlebars-template">
+			<li class="playlist__item track", data-index="{{index}}">
+			 <div class="track__cover-wrap">
+			  <img class="track__cover" src="{{cover}}">
+			 </div>
+			 <div class="track__info">
+			  <span class="track__title">{{title}}</span>
+			  <span class="track__artist">{{artist}}</span>
+			 </div>
+			 <div class="track__btn track__btn_type_remove">&times;</div>
+			</li>
+		</script>
+		<!-- Шаблон-->
+	</body>
+	<script src="/assets/scripts/debug.js?1438349986423"></script>
+	<script src="/assets/scripts/common.min.js?1438349986423"></script>
+
+</html>
