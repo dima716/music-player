@@ -1,22 +1,16 @@
 .playlist
-	background: #fff linear-gradient(to bottom, #efefef, #f7f7f7)
-	border-left: 1px solid #ccc
+	background-color player-background-color
+	background-image player-background-image
+	border-left: 1px solid player-border-color
 	position relative
 	overflow-y auto
-
-	&__header
-		padding 15px
-		padding-left 10px
-		display flex
-		align-items center
-		border-bottom 1px solid #ccc
 
 	&__item
 		display flex
 		position relative
 		padding 10px
 		align-items center
-		border-bottom 1px solid #ccc
+		border-bottom 1px solid player-border-color
 		cursor pointer
 
 		&:last-child
@@ -24,18 +18,7 @@
 
 		&:hover,
 		&_state_active
-			background-color rgba(0,0,0,.1)
-
-	&__label
-		font-size 18px
-		margin-right 10px
-
-	&__input
-		flex 1
-		padding 5px
-		border-radius 5px
-		border 1px solid #ccc
-		box-shadow 0 0 1px 0 rgba(0,0,0,.2)
+			background-color player-active-item-color
 
 	&__note
 		display none
@@ -46,8 +29,6 @@
 		font-size 20px
 
 	&_empty
-		.playlist__header
-			display none
 		.playlist__note
 			display block
 

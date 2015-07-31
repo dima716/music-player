@@ -3,67 +3,68 @@ div(class="player")
 		div(class="player__cover-wrap")
 			img(class="player__cover" src="assets/images/default.png", alt="Music")
 		div(class="player__playlist playlist playlist_empty")
-			div(class="playlist__header")
-				label(class="playlist__label" for="playlist-search") Поиск
-				input(class="playlist__input" type="search" id="playlist-search")
 			ul(class="playlist__content")
 			div(class="playlist__note") Перенесите песни сюда
-	div(id="wave", class="waveform")
+	div(id="wave", class="player__waveform waveform")
+		img(src="assets/images/loader.svg", class="waveform__loader")
 	div(class="player__bar")
 		div(class="player__controls controls")
 			div(class="controls__item controls__item_type_previous")
 				i(class="controls__icon controls__icon_type_backward2")
-			div(class="controls__item controls__item_type_play3")
+			div(class="controls__item controls__item_type_play-pause")
 				i(class="controls__icon controls__icon_type_play3")
 			div(class="controls__item controls__item_type_next")
 				i(class="controls__icon controls__icon_type_forward3")
 			div(class="controls__item controls__item_type_volume")
 				i(class="controls__icon controls__icon_type_volume-mute")
-				input(type="range", min="0", max="100")
-				span 50
-			div(class="controls__item controls__item_type_eq")
+				input(type="range", min="0", max="100", value="100")
+				span
+			div(class="controls__item controls__item_type_equalizer")
 				i(class="controls__icon controls__icon_type_equalizer2")
 			div(class="controls__item controls__item_type_shuffle")
 				i(class="controls__icon controls__icon_type_shuffle")
-			div(class="controls__item controls__item_type_repeat")
+			div(class="controls__item controls__item_type_loop")
 				i(class="controls__icon controls__icon_type_loop2")
+		div(class="player__track track track_size_small")
+			div(class="track__title")
+			div(class="track__artist")
 		div(class="player__time time")
 			span(class="time__item time__item_type_current") -
 			span(class="time__item time__item_type_separator") /
 			span(class="time__item time__item_type_total") -
-		div(class="eq")
-			div(class="eq__list")
-				div(class="eq__item")
-					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
-				div(class="eq__item")
-					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
-				div(class="eq__item")
-					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
-				div(class="eq__item")
-					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
-				div(class="eq__item")
-					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
-				div(class="eq__item")
-					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
-				div(class="eq__item")
-					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
-				div(class="eq__item")
-					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
-				div(class="eq__item")
-					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
-				div(class="eq__item")
-					input(class="eq__input", type="range", min="-40", max="40", orient="vertical")
+		div(class="equalizer")
+			div(class="equalizer__list")
+				div(class="equalizer__item", data-frequency="32 Гц")
+					input(class="equalizer__input", type="range", min="-12", max="12", orient="vertical")
+				div(class="equalizer__item", data-frequency="64 Гц")
+					input(class="equalizer__input", type="range", min="-12", max="12", orient="vertical")
+				div(class="equalizer__item", data-frequency="125 Гц")
+					input(class="equalizer__input", type="range", min="-12", max="12", orient="vertical")
+				div(class="equalizer__item", data-frequency="250 Гц")
+					input(class="equalizer__input", type="range", min="-12", max="12", orient="vertical")
+				div(class="equalizer__item", data-frequency="500 Гц")
+					input(class="equalizer__input", type="range", min="-12", max="12", orient="vertical")
+				div(class="equalizer__item", data-frequency="1 кГц")
+					input(class="equalizer__input", type="range", min="-12", max="12", orient="vertical")
+				div(class="equalizer__item", data-frequency="2 кГц")
+					input(class="equalizer__input", type="range", min="-12", max="12", orient="vertical")
+				div(class="equalizer__item", data-frequency="4 кГц")
+					input(class="equalizer__input", type="range", min="-12", max="12", orient="vertical")
+				div(class="equalizer__item", data-frequency="8 кГц")
+					input(class="equalizer__input", type="range", min="-12", max="12", orient="vertical")
+				div(class="equalizer__item", data-frequency="16 кГц")
+					input(class="equalizer__input", type="range", min="-12", max="12", orient="vertical")
 
-			ul(class="eq__presets presets")
-				li(class="presets__item presets__item_type_pop") pop
-				li(class="presets__item presets__item_type_rock") rock
-				li(class="presets__item presets__item_type_jazz") jazz
-				li(class="presets__item presets__item_type_classic") classic
-				li(class="presets__item presets__item_type_normal presets__item_state_active") normal
+			ul(class="equalizer__presets presets")
+				li(class="presets__item presets__item_type_pop", data-preset="pop") pop
+				li(class="presets__item presets__item_type_rock", data-preset="rock") rock
+				li(class="presets__item presets__item_type_jazz", data-preset="jazz") jazz
+				li(class="presets__item presets__item_type_classic", data-preset="classic") classic
+				li(class="presets__item presets__item_type_normal presets__item_state_active", data-preset="normal") normal
 div(class="dropzone") Добавить файлы
 // Шаблон
 script(id="playlist-item" type="text/x-handlebars-template").
-	<li class="playlist__item track", data-id="{{id}}">
+	<li class="playlist__item track", data-index="{{index}}">
 		<div class="track__cover-wrap">
 			<img class="track__cover" src="{{cover}}">
 		</div>

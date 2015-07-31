@@ -16,26 +16,30 @@
 	&__artist
 		display block
 		font-size 18px
-		color #777
+		color track-artist-color
 
 	&__btn
 		position absolute
 		cursor pointer
 
 		&:hover
-			color #fff
+			color player-theme-color
 
 		&_type_remove
 			top 10px
 			right 10px
-			border 2px solid #000
+			border 2px solid
 			border-radius 50%
 			font-size 25px
 			width 30px
 			height 30px
 			text-align center
 			line-height 23px
+			color player-icon-color
 
-		&_type_unclickable
-			pointer-events: none;
+	&_size_small
+		.track__title
+			font-size 18px
+		.track__artist
+			font-size 16px
 

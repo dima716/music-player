@@ -8,7 +8,7 @@ paths   = require '../paths'
 
 gulp.task 'copy:images', ->
 	gulp.src [
-			'**/*.{png,jpg,gif}'
+			'**/*.{png,jpg,gif,svg}'
 			'!sprite/**/*'
 		],
 			cwd: paths.appImages

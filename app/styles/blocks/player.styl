@@ -4,19 +4,28 @@
 	height 100%
 
 	&__bar
-		background-color #fff
-		border-top 1px solid #ccc
-		background-image linear-gradient(to bottom, #efefef, #f7f7f7)
+		background-color player-background-color
+		border-top 1px solid player-border-color
+		background-image layer-background-image
 		display flex
 		position relative
 
-	&__controls,
+	&__controls
+		flex 3
+	&__track
+		flex 2
+		display flex
+		flex-direction column
+		justify-content center
+		position relative
+		left 40px
 	&__time
 		flex 1
 
 	&__inner
 		flex 1
 		display flex
+		min-height 0 // fix for mozilla bug https://bugzilla.mozilla.org/show_bug.cgi?id=1043520#c0
 
 	&__playlist
 		flex 1
@@ -32,7 +41,7 @@
 			align-items center
 			overflow hidden
 			flex 1
-			background-color #fff
+			background-color player-cover-color
 
 
 
