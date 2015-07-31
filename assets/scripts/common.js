@@ -354,10 +354,10 @@ var playlist = (function () {
 			if (tracks.length === 1) {
 				player.load(track);
 				$('.playlist').removeClass('playlist_empty');
-				// $(window).on('resize',function () {
-				// 	wavesurfer.drawer.containerWidth = wavesurfer.drawer.container.clientWidth;
-				// 	wavesurfer.drawBuffer();
-				// });
+				$(window).on('resize',function () {
+					wavesurfer.drawer.containerWidth = wavesurfer.drawer.container.clientWidth;
+					wavesurfer.drawBuffer();
+				});
 				$('.waveform').addClass('waveform_state_active');
 			}
 		},
