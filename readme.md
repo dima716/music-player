@@ -1,5 +1,5 @@
 # Третье задание по ШРИ - музыкальный плеер
-**Адрес для просмотра задания - [`http://dima716.github.io/music-player/`](http://dima716.github.io/music-player/)**
+**Адрес для просмотра задания - [`http://dima716.github.io/music-player/`](http://dima716.github.io/music-player/)**  
 **Сделано на основе шаблона проекта для быстрого старта компании CSSSR Project Template.**
 
 
