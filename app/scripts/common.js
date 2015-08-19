@@ -314,6 +314,7 @@ var playlist = (function () {
 		updateDataIndexAttributes();
 
 		if (tracks.length === 0) {
+			player.stop();
 			player.setInitialState();
 		}
 	}
@@ -501,7 +502,7 @@ var equalizer = (function () {
 			$equalizerControls.eq(index).on('input', onInput);
 
 			function onInput(e) {
-				filter.gain.value = Boolean(e.target.value);
+				filter.gain.value = e.target.value;
 			}
 		});
 	}
